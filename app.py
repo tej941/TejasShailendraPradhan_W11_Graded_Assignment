@@ -10,7 +10,7 @@ from ms.functions import get_model_response
 
 
 model_name = "Breast Cancer Wisconsin (Diagnostic)"
-model_file = 'model_binary.dat.gz'
+model_file = '/home/tejas-pradhan/Great_Learning/Designing_Intelligent_Systems/week10_week12_assignment/Microservices/model/model_binary_new.dat.gz'
 version = "v1.0.0"
 
 

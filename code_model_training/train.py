@@ -8,14 +8,15 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import ConfusionMatrixDisplay
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import pandas as pd
 import joblib
 import gzip
 
-
 # Load the dataset
-data = pd.read_csv('data/breast_cancer.csv')
+data = pd.read_csv('/home/tejas-pradhan/Great_Learning/Designing_Intelligent_Systems/week10_week12_assignment/Microservices/data/breast_cancer.csv')
 
 # Preprocess dataset
 data = data.set_index('id')
@@ -51,7 +52,9 @@ print("Accuracy: %s" % str(pipe.score(X_test, y_test)))
 
 # Plot confusion matrix
 print(ConfusionMatrixDisplay.from_estimator(pipe, X_test, y_test))
+
 plt.show()
+plt.savefig('/home/tejas-pradhan/Great_Learning/Designing_Intelligent_Systems/week10_week12_assignment/Microservices/model_image/ConfusionMatrixDisplay.jpeg')
 
 # Export model
-joblib.dump(pipe, gzip.open('model/model_binary.dat.gz', "wb"))
+joblib.dump(pipe, gzip.open('/home/tejas-pradhan/Great_Learning/Designing_Intelligent_Systems/week10_week12_assignment/Microservices/model/model_binary_new.dat.gz', "wb"))
