@@ -10,19 +10,6 @@ def predict(X, model):
 
 
 def get_model_response(json_data):
-    # X = pd.DataFrame.from_dict(json_data)
-    # prediction = predict(X, model)
-    # if prediction == 1:
-    #     label = "M"
-    # else:
-    #     label = "B"
-    # return {
-    #     'status': 200,
-    #     'label': label,
-    #     'prediction': int(prediction)
-    # }
-
-
     # Convert JSON data to DataFrame
     df = pd.DataFrame.from_dict(json_data)
 
